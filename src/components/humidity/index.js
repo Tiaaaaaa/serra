@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle } from '../../common/style';
+import { Window, WindowTitle, Button } from '../../common/style';
 
-export const AirHumidity = () => {
+export const Humidity = () => {
   return (
     <Window>
       <WindowTitle>Umidità</WindowTitle>
+      <Button>+</Button>
     </Window>
   );
 };
