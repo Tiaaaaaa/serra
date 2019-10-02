@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const WindowsContainer = styled.article`
   display: flex;
@@ -13,14 +13,23 @@ export const Window = styled.article`
   border-radius: 1rem;
   box-shadow: 0 0.375em 0.65em 0.1625em rgba(0, 0, 0, 0.2);
   margin: 0.5em 0;
-  min-width: 45%;
+  min-width: 44%;
   flex-direction: column;
 `;
 
 export const WindowTitle = styled.h1`
   font-family: helvetica;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
+`;
+
+export const Body = styled.section`
+  display: flex;
+  padding: 1em 0;
+`;
+
+export const Image = styled.div`
+  font-size: 4em;
 `;
 
 export const Button = styled.button`

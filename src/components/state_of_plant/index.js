@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Container, Title } from './style';
+import { Container, Title } from "./style";
 
 const returnState = () => {
-  return 'bene'
-}
+  return "bene";
+};
 
 export const StateOfPlant = () => {
   return (
