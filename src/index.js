@@ -6,6 +6,8 @@ import { Luminance } from "./components/luminance/index";
 import { Temperature } from "./components/temperature/index";
 import { Water } from "./components/water/index";
 import { WindowsContainer } from "./common/style";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const App = () => {
   return (
@@ -21,4 +23,9 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("serra"));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("serra")
+);

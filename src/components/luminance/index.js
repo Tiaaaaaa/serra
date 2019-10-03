@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Button, Body, Image, Description, Data, TextContainer, ButtonContainer } from "../../common/style";
+import {
+  Window,
+  WindowTitle,
+  Button,
+  Body,
+  Image,
+  Description,
+  Data,
+  TextContainer,
+  ButtonContainer
+} from "../../common/style";
 
 export const Luminance = () => {
   return (

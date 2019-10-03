@@ -60,8 +60,8 @@ export const TextContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-flow: column;
-`
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
-`
+`;
