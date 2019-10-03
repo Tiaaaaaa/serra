@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Button, Body, Image } from "../../common/style";
+import { Window, WindowTitle, Button, Body, Image, Description, Data, TextContainer, ButtonContainer } from "../../common/style";
 
 export const Luminance = () => {
   return (
@@ -8,9 +8,15 @@ export const Luminance = () => {
       <WindowTitle>Luminosità</WindowTitle>
       <Body>
         <Image>💡</Image>
-        <div>10%</div>
+        <TextContainer>
+          <Description>Ottimale</Description>
+          <Data>1000 lum</Data>
+        </TextContainer>
       </Body>
-      <Button>+</Button>
+      <ButtonContainer>
+        <Button>-</Button>
+        <Button>+</Button>
+      </ButtonContainer>
     </Window>
   );
 };
