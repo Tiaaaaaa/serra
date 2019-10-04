@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Body, Image } from "../../common/style";
+import {
+  Window,
+  WindowTitle,
+  Body,
+  Image,
+  EmptyButton,
+  TextContainer,
+  Data
+} from "../../common/style";
 
 export const Humidity = () => {
   return (
@@ -8,8 +16,11 @@ export const Humidity = () => {
       <WindowTitle>Umidità</WindowTitle>
       <Body>
         <Image>🌫️</Image>
-        <div>10%</div>
+        <TextContainer>
+          <Data>10%</Data>
+        </TextContainer>
       </Body>
+      <EmptyButton />
     </Window>
   );
 };

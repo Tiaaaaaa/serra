@@ -6,7 +6,8 @@ import {
   Button,
   Body,
   Image,
-  Data
+  Data,
+  TextContainer
 } from "../../common/style";
 import { useSelector, useDispatch } from "react-redux";
 import { ADD_WATER } from "./actions";
@@ -19,7 +20,9 @@ export const Water = props => {
       <WindowTitle>Acqua</WindowTitle>
       <Body>
         <Image>💧</Image>
-        <Data>{water}</Data>
+        <TextContainer>
+          <Data>{water} ml</Data>
+        </TextContainer>
       </Body>
       <Button onClick={() => dispatch(ADD_WATER())}>+</Button>
     </Window>

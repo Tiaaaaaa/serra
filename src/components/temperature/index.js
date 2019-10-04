@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Body, Image } from "../../common/style";
+import {
+  Window,
+  WindowTitle,
+  Body,
+  Image,
+  Data,
+  TextContainer,
+  EmptyButton
+} from "../../common/style";
 
 export const Temperature = () => {
   return (
@@ -8,8 +16,11 @@ export const Temperature = () => {
       <WindowTitle>Temperatura</WindowTitle>
       <Body>
         <Image>🌡️</Image>
-        <div>10%</div>
+        <TextContainer>
+          <Data>10%</Data>
+        </TextContainer>
       </Body>
+      <EmptyButton />
     </Window>
   );
 };

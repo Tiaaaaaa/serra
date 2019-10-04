@@ -13,6 +13,7 @@ export const Window = styled.article`
   display: flex;
   justify-content: center;
   padding: 1em;
+  margin: 0.5em;
   border-radius: 1rem;
   box-shadow: 0 0.375em 0.65em 0.1625em rgba(0, 0, 0, 0.2);
   min-width: 20%;
@@ -47,8 +48,14 @@ export const Button = styled.button`
   background-color: rgb(255, 255, 255);
 `;
 
+export const EmptyButton = styled.div`
+  font-size: 1rem;
+  margin: 0 0.1em;
+  flex: 1;
+`;
+
 export const Data = styled.h3`
-  font-size: 2em;
+  font-size: 1em;
   font-family: helvetica;
 `;
 
@@ -60,6 +67,7 @@ export const TextContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-flow: column;
+  margin-left: 0.4em;
 `;
 
 export const ButtonContainer = styled.div`
