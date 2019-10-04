@@ -1,34 +1,27 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Button, Body, Image } from "../../common/style";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import {
+  Window,
+  WindowTitle,
+  Button,
+  Body,
+  Image,
+  Data
+} from "../../common/style";
+import { useSelector, useDispatch } from "react-redux";
 import { ADD_WATER } from "./actions";
-import { mapStateToProps } from "../../redux/state_to_props";
-
-const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(
-    {
-      ADD_WATER
-    },
-    dispatch
-  )
-});
 
 export const Water = props => {
+  const water = useSelector(state => state.water);
+  const dispatch = useDispatch();
   return (
     <Window>
       <WindowTitle>Acqua</WindowTitle>
       <Body>
         <Image>💧</Image>
-        <div>10%</div>
+        <Data>{water}</Data>
       </Body>
-      <Button onClick={props.ADD_WATER}>+</Button>
+      <Button onClick={() => dispatch(ADD_WATER())}>+</Button>
     </Window>
   );
 };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Water);

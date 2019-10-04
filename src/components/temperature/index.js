@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Window, WindowTitle, Button, Body, Image } from "../../common/style";
+import { Window, WindowTitle, Body, Image } from "../../common/style";
 
 export const Temperature = () => {
   return (
@@ -10,7 +10,6 @@ export const Temperature = () => {
         <Image>🌡️</Image>
         <div>10%</div>
       </Body>
-      <Button>+</Button>
     </Window>
   );
 };

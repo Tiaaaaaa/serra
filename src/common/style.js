@@ -48,7 +48,7 @@ export const Button = styled.button`
 `;
 
 export const Data = styled.h3`
-  font-size: 0.7em;
+  font-size: 2em;
   font-family: helvetica;
 `;
 
