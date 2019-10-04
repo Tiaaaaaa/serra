@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import {
-  Window,
   WindowTitle,
-  Button,
   Body,
   Image,
   Description,
@@ -11,7 +9,7 @@ import {
   TextContainer,
   ButtonContainer
 } from "../../common/style";
-
+import { Window, Button } from "./style";
 import { useSelector, useDispatch } from "react-redux";
 import { CHANGE_STATE } from "./actions";
 
@@ -19,18 +17,17 @@ export const Luminance = () => {
   const luminance = useSelector(state => state.luminance);
   const dispatch = useDispatch();
   return (
-    <Window>
+    <Window color={luminance}>
       <WindowTitle>Luminosità</WindowTitle>
       <Body>
-        <Image>💡</Image>
+        <Image>{luminance ? "💡" : "🌞"}</Image>
         <TextContainer>
-          <Description>Ottimale</Description>
-          <Data>1000 lum</Data>
+          <Description>{luminance ? "Artificiale" : "Naturale"}</Description>
         </TextContainer>
       </Body>
       <ButtonContainer>
-        <Button onClick={() => dispatch(CHANGE_STATE())}>
-          {luminance.toString()}
+        <Button color={luminance} onClick={() => dispatch(CHANGE_STATE())}>
+          {luminance ? "On" : "Off"}
         </Button>
       </ButtonContainer>
     </Window>
