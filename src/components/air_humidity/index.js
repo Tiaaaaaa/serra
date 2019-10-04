@@ -10,10 +10,10 @@ import {
   Data
 } from "../../common/style";
 
-export const Humidity = () => {
+export const AirHumidity = () => {
   return (
     <Window>
-      <WindowTitle>Umidità</WindowTitle>
+      <WindowTitle>Umidità dell'aria</WindowTitle>
       <Body>
         <Image>🌫️</Image>
         <TextContainer>

@@ -12,7 +12,12 @@ import {
   ButtonContainer
 } from "../../common/style";
 
+import { useSelector, useDispatch } from "react-redux";
+import { CHANGE_STATE } from "./actions";
+
 export const Luminance = () => {
+  const luminance = useSelector(state => state.luminance);
+  const dispatch = useDispatch();
   return (
     <Window>
       <WindowTitle>Luminosità</WindowTitle>
@@ -24,8 +29,9 @@ export const Luminance = () => {
         </TextContainer>
       </Body>
       <ButtonContainer>
-        <Button>-</Button>
-        <Button>+</Button>
+        <Button onClick={() => dispatch(CHANGE_STATE())}>
+          {luminance.toString()}
+        </Button>
       </ButtonContainer>
     </Window>
   );
