@@ -9,18 +9,21 @@ import { Water } from "./components/water/index";
 import { WindowsContainer } from "./common/style";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { Color } from "./common/style";
 
 const App = () => {
   return (
     <div>
-      <StateOfPlant />
-      <WindowsContainer>
-        <Luminance />
-        <AirHumidity />
-        <GroundHumidity />
-        <Temperature />
-        <Water />
-      </WindowsContainer>
+      <Color>
+        <StateOfPlant />
+        <WindowsContainer>
+          <Luminance />
+          <Water />
+          <AirHumidity />
+          <GroundHumidity />
+          <Temperature />
+        </WindowsContainer>
+      </Color>
     </div>
   );
 };

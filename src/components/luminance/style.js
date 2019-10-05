@@ -5,8 +5,9 @@ export const Window = styled.article`
   justify-content: center;
   padding: 1em;
   margin: 0.5em;
-  background-color: ${props => props.color ? "#E3E3E3" : "#f9ff60"}};
-  background-image: ${props => props.color
+  background-color: ${props => (props.color ? "#E3E3E3" : "#f9ff60")}};
+  background-image: ${props =>
+    props.color
       ? "white"
       : "linear-gradient(315deg, #f9ff60 0%, #ffef77 74%)"}};
   border-radius: 1rem;
@@ -16,7 +17,7 @@ export const Window = styled.article`
   transition: all 0.2s;
 `;
 export const Button = styled.button`
-  background-color: ${props => props.color ? "#f9ff60  " : "#E3E3E3"};
+  background-color: ${props => (props.color ? "#f9ff60  " : "#E3E3E3")};
   font-weight: 300;
   font-family: helvetica;
   border: none;

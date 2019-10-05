@@ -9,7 +9,7 @@ const returnState = () => {
 export const StateOfPlant = () => {
   return (
     <Container>
-      <Title>La tua pianta si sente {returnState()}</Title>
+      <Title>La tua 🌱 si sente {returnState()}</Title>
     </Container>
   );
 };

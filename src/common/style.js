@@ -19,6 +19,7 @@ export const Window = styled.article`
   box-shadow: 0 0.375em 0.65em 0.1625em rgba(0, 0, 0, 0.2);
   min-width: 20%;
   z-index: 3;
+  background-color: white;
   flex-direction: column;
 `;
 
@@ -74,4 +75,9 @@ export const TextContainer = styled.section`
 
 export const ButtonContainer = styled.div`
   display: flex;
+`;
+
+export const Color = styled.div`
+  background-color: #ffffff;
+  background-image: linear-gradient(0deg, #ffffff 36%, #f3fdf3 100%);
 `;
