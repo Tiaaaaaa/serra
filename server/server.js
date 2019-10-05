@@ -1,7 +1,6 @@
 import Serialport from "serialport";
 import Readline from "@serialport/parser-readline";
-import { store } from '../client/src/store'
-
+import { store } from "../client/src/store";
 
 SerialPort.list((err, list) => {
   for (i in list) {

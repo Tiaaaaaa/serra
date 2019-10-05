@@ -1,29 +1,23 @@
-const Serialport = require("serialport");
-const Readline = require("@serialport/parser-readline")
-const store = require('../client/src/store')
+import express from "express";
+const app = express();
 
-/*
-SerialPort.list((err, list) => {
-  for (i in list) {
-    if (list[i].manufacturer === "Arduino (www.arduino.cc)") {
-      const port = new SerialPort(list[i].comName, { baudRate: 9600 });
-      const parser = port.pipe(new Readline({ delimiter: "\n" }));
+app.get("*", (req, res) => {
+  const raw = `
+  <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+      </head>
+      <body>
+      
+      <div id="app"></div>
+      <script src="dist/bundle.js"></script>
+      </body>
+      </html>
+  `;
 
-      // Read the port data
-      port.on("open", () =>
-        console.log(`port open. Data rate: ${port.baudRate}`)
-      );
-      parser.on("data", data => {
-        console.log("got word from arduino:", data);
-      });
-      setTimeout(() => {
-        port.write("Hello world", err => {
-          if (err) return console.log("Error on write: ", err.message);
-          console.log("message written");
-        });
-      }, 500);
-    } else {
-    }
-  }
+  res.send(raw);
 });
-*/
+
+app.listen(5000, () => console.log(`Frontend service listening on port: 5000`));
