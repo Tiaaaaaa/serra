@@ -9,15 +9,16 @@ import {
   TextContainer,
   EmptyButton
 } from "../../common/style";
-
+import { useSelector, useDispatch } from "react-redux";
 export const Temperature = () => {
+  const temperature = useSelector(state => state.temperature);
   return (
     <Window>
       <WindowTitle>Temperatura</WindowTitle>
       <Body>
         <Image>🌡️</Image>
         <TextContainer>
-          <Data>10%</Data>
+          <Data>{temperature} °C</Data>
         </TextContainer>
       </Body>
       <EmptyButton />

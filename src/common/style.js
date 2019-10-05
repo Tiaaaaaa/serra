@@ -17,7 +17,6 @@ export const Window = styled.article`
   margin: 0.5em;
   border-radius: 1rem;
   box-shadow: 0 0.375em 0.65em 0.1625em rgba(0, 0, 0, 0.2);
-  min-width: 20%;
   z-index: 3;
   background-color: white;
   flex-direction: column;
@@ -61,7 +60,6 @@ export const Data = styled.h3`
   font-size: 1em;
   font-family: helvetica;
 `;
-
 export const Description = styled.h2`
   font-size: 1em;
   font-family: helvetica;

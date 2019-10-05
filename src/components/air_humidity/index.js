@@ -10,14 +10,16 @@ import {
   Data
 } from "../../common/style";
 
+import { useSelector } from "react-redux";
 export const AirHumidity = () => {
+  const groundHumidity = useSelector(state => state.groundHumidity);
   return (
     <Window>
       <WindowTitle>Umidità dell'aria</WindowTitle>
       <Body>
         <Image>🌫️</Image>
         <TextContainer>
-          <Data>10%</Data>
+          <Data>{groundHumidity}%</Data>
         </TextContainer>
       </Body>
       <EmptyButton />
