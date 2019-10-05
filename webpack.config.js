@@ -4,7 +4,7 @@ const WEBPACK = require("webpack");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./client/src/index.js",
     vendor: ["react", "react-dom"]
   },
   output: {
@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new WEBPACK_HTML_PLUGIN({
-      template: PATH.join(__dirname, "./src/index.html"),
+      template: PATH.join(__dirname, "./client/src/index.html"),
       inject: true,
       filename: "index.html",
       hash: true,

@@ -10,5 +10,5 @@ export const merge = combineReducers({
   luminance: LUMINANCE,
   temperature: TEMPERATURE,
   groundHumidity: GROUND_HUMIDITY,
-  airHumidity: AIR_HUMIDITY,
+  airHumidity: AIR_HUMIDITY
 });

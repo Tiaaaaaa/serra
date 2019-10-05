@@ -11,7 +11,7 @@ import {
 } from "../../common/style";
 import { useSelector } from "react-redux";
 export const GroundHumidity = () => {
-    const groundHumidity = useSelector(state => state.groundHumidity);
+  const groundHumidity = useSelector(state => state.groundHumidity);
   return (
     <Window>
       <WindowTitle>Umidità del terreno</WindowTitle>

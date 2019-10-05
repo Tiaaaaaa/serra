@@ -1,8 +1,8 @@
-const Serialport = require("serialport");
-const Readline = require("@serialport/parser-readline")
-const store = require('../client/src/store')
+import Serialport from "serialport";
+import Readline from "@serialport/parser-readline";
+import { store } from '../client/src/store'
 
-/*
+
 SerialPort.list((err, list) => {
   for (i in list) {
     if (list[i].manufacturer === "Arduino (www.arduino.cc)") {
@@ -26,4 +26,3 @@ SerialPort.list((err, list) => {
     }
   }
 });
-*/
