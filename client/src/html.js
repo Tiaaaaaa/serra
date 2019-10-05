@@ -1,3 +1,4 @@
+export const html = ({ store, content, styles }) => `
 <!DOCTYPE html>
 
 <head>
@@ -166,7 +167,7 @@
             resize: vertical;
         }
         /**
- * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * Correct inline-block display not defined in IE 6/7/8/9 and Firefox 3.
  */
 
         audio,
@@ -178,7 +179,7 @@
             max-width: 100%;
         }
         /**
- * Prevent modern browsers from displaying `audio` without controls.
+ * Prevent modern browsers from displaying audio without controls.
  * Remove excess height in iOS 5 devices.
  */
 
@@ -195,8 +196,8 @@
             display: none;
         }
         /**
- * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
+ * 1. Correct text resizing oddly in IE 6/7 when body font-size is set using
+ *    em units.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
@@ -210,7 +211,7 @@
             /* 2 */
         }
         /**
- * Address `outline` inconsistency between Chrome and other browsers.
+ * Address outline inconsistency between Chrome and other browsers.
  */
 
         a:focus {
@@ -225,7 +226,7 @@
             outline: 0;
         }
         /**
- * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 1. Remove border when inside a element in IE 6/7/8/9 and Firefox 3.
  * 2. Improve image quality when scaled in IE 7.
  */
 
@@ -294,7 +295,7 @@
             /* 3 */
         }
         /**
- * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * Address Firefox 3+ setting line-height on input using !important in
  * the UA stylesheet.
  */
 
@@ -303,10 +304,10 @@
             line-height: normal;
         }
         /**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
+ * Address inconsistent text-transform inheritance for button and select.
+ * All other form control elements do not inherit text-transform values.
+ * Correct button style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct select style inheritance in Firefox 4+ and Opera.
  */
 
         button,
@@ -314,11 +315,11 @@
             text-transform: none;
         }
         /**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native audio
+ *    and video controls.
+ * 2. Correct inability to style clickable input types in iOS.
  * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
+ *    input and others.
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
@@ -363,9 +364,9 @@
             /* 3 */
         }
         /**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
+ * 1. Address appearance set to searchfield in Safari 5 and Chrome.
+ * 2. Address box-sizing set to border-box in Safari 5 and Chrome
+ *    (include -moz to future-proof).
  */
 
         input[type="search"] {
@@ -480,10 +481,13 @@
             font-size: inherit
         }
     </style>
+    ${styles}
 </head>
-
-<body>
-  <article id="serra"></article>
-</body>
+      <div id="app">${content}</div>
+      <script>
+        window.INITIAL_STATE = ${JSON.stringify(store.getState())}
+      </script>
+      <script src="dist/bundle.js"></script>
 
 </html>
+`;

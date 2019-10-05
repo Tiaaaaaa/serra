@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { Color } from "./common/style";
 
-const App = () => {
+export const App = () => {
   return (
     <div>
       <Color>
@@ -27,10 +27,3 @@ const App = () => {
     </div>
   );
 };
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("serra")
-);

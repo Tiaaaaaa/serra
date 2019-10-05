@@ -17,7 +17,7 @@ export const Luminance = () => {
   const luminance = useSelector(state => state.luminance);
   const dispatch = useDispatch();
   return (
-    <Window color={luminance}>
+    <Window>
       <WindowTitle>Luminosità</WindowTitle>
       <Body>
         <Image>{luminance ? "💡" : "🌞"}</Image>
@@ -26,9 +26,7 @@ export const Luminance = () => {
         </TextContainer>
       </Body>
       <ButtonContainer>
-        <Button color={luminance} onClick={() => dispatch(CHANGE_STATE())}>
-          Cambia
-        </Button>
+        <Button onClick={() => dispatch(CHANGE_STATE())}>Cambia</Button>
       </ButtonContainer>
     </Window>
   );

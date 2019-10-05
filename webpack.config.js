@@ -1,5 +1,4 @@
 const PATH = require("path");
-const WEBPACK_HTML_PLUGIN = require("html-webpack-plugin");
 const WEBPACK = require("webpack");
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
     vendor: ["react", "react-dom"]
   },
   output: {
-    path: PATH.resolve(__dirname, "./build/"),
+    path: PATH.resolve(__dirname, "./dist/build/"),
     filename: "build.js",
     chunkFilename: "[id].[hash:8].js",
     publicPath: "/"
@@ -31,15 +30,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new WEBPACK_HTML_PLUGIN({
-      template: PATH.join(__dirname, "./client/src/index.html"),
-      inject: true,
-      filename: "index.html",
-      hash: true,
-      minify: true
-    })
-  ],
   optimization: {
     splitChunks: {
       chunks: "all",

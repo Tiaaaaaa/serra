@@ -7,7 +7,7 @@ module.exports = {
   entry: "./server/index.js",
   output: {
     path: path.resolve(__dirname),
-    filename: "./build/server.js"
+    filename: "./dist/server.js"
   },
   module: {
     rules: [
