@@ -16,6 +16,7 @@ import { CHANGE_STATE } from "./actions";
 export const Luminance = () => {
   const luminance = useSelector(state => state.luminance);
   const dispatch = useDispatch();
+  console.log(luminance)
   return (
     <Window color={luminance}>
       <WindowTitle>Luminosità</WindowTitle>
@@ -27,7 +28,7 @@ export const Luminance = () => {
       </Body>
       <ButtonContainer>
         <Button color={luminance} onClick={() => dispatch(CHANGE_STATE())}>
-          {luminance ? "On" : "Off"}
+          Cambia
         </Button>
       </ButtonContainer>
     </Window>

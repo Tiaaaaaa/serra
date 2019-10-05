@@ -4,6 +4,7 @@ export const WindowsContainer = styled.article`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  z-index: 2;
   @media all and (max-width: 800px) {
     flex-direction: column;
   }
@@ -17,6 +18,7 @@ export const Window = styled.article`
   border-radius: 1rem;
   box-shadow: 0 0.375em 0.65em 0.1625em rgba(0, 0, 0, 0.2);
   min-width: 20%;
+  z-index: 3;
   flex-direction: column;
 `;
 
