@@ -24,6 +24,7 @@ export const Water = props => {
           <Data>{water} ml</Data>
         </TextContainer>
       </Body>
+      <button onPointerDown={() => console.log('hello')} >c</button>
       <Button onClick={() => dispatch(ADD_WATER())}>+</Button>
     </Window>
   );

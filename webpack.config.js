@@ -7,10 +7,9 @@ module.exports = {
     vendor: ["react", "react-dom"]
   },
   output: {
-    path: PATH.resolve(__dirname, "./dist/build/"),
+    path: PATH.resolve(__dirname, "./dist"),
     filename: "build.js",
     chunkFilename: "[id].[hash:8].js",
-    publicPath: "/"
   },
   module: {
     rules: [
@@ -52,12 +51,4 @@ module.exports = {
       }
     }
   },
-  devServer: {
-    hot: true,
-    inline: true,
-    contentBase: PATH.join(__dirname, "src"),
-    port: 4000,
-    historyApiFallback: true,
-    host: "localhost"
-  }
 };

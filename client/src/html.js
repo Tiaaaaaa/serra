@@ -483,6 +483,7 @@ export const html = ({ preloadedState, content, styles }) => `
     </style>
     ${styles}
 </head>
+<body>
       <div id="app">${content}</div>
        <script>
           // WARNING: See the following for security issues around embedding JSON in HTML:
@@ -492,7 +493,7 @@ export const html = ({ preloadedState, content, styles }) => `
             "\\u003c"
           )}
         </script>
-      <script src=".build/build.js"></script>
-
+      <script src="build.js"></script>
+</body>
 </html>
 `;
