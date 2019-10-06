@@ -11,6 +11,7 @@ import { html } from "../client/src/html";
 const app = express();
 
 app.use("/dist", express.static("dist"));
+
 app.get("*", async (req, res) => {
   const sheet = new ServerStyleSheet();
   const content = renderToString(
@@ -21,7 +22,8 @@ app.get("*", async (req, res) => {
     )
   );
   const styles = sheet.getStyleTags();
-  res.send(html({ store, content, styles }));
+  const preloadedState = store.getState();
+  res.send(html({ preloadedState, content, styles }));
 });
 
 app.listen(5000, () => console.log(`Frontend service listening on port: 5000`));
