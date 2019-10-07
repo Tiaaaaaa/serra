@@ -1,54 +1,57 @@
-const PATH = require("path");
-const WEBPACK = require("webpack");
+const webpack = require('webpack')
+const nodeExternals = require('webpack-node-externals')
+const path = require('path')
 
-module.exports = {
-  entry: {
-    app: "./client/src/index.js",
-    vendor: ["react", "react-dom"]
+const js = {
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['react', 'es2015'],
+      plugins: ['transform-class-properties']
+    }
+  }
+}
+
+const serverConfig = {
+  mode: 'development',
+  target: 'node',
+  node: {
+    __dirname: false
   },
-  output: {
-    path: PATH.resolve(__dirname, "./dist"),
-    filename: "build.js",
-    chunkFilename: "[id].[hash:8].js",
+  externals: [nodeExternals()],
+  entry: {
+    'index.js': path.resolve(__dirname, 'src/index.js')
   },
   module: {
-    rules: [
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
-          }
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: "/node_modules/",
-        use: "babel-loader?cacheDirectory"
-      }
-    ]
+    rules: [js]
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name]'
+  }
+}
+
+const clientConfig = {
+  mode: 'development',
+  target: 'web',
+  entry: {
+    'home.js': path.resolve(__dirname, 'src/public/home.js'),
+    'multipleRoutes.js': path.resolve(__dirname, 'src/public/multipleRoutes.js')
+  },
+  module: {
+    rules: [js]
   },
   optimization: {
     splitChunks: {
-      chunks: "all",
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            // get the name. E.g. node_modules/packageName/not/this/part.js
-            // or node_modules/packageName
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
-
-            // npm package names are URL-safe, but some servers don't like @ symbols
-            return `npm.${packageName.replace("@", "")}`;
-          }
-        }
-      }
+      chunks: 'all'
     }
   },
-};
+  output: {
+    path: path.resolve(__dirname, 'dist/public'),
+    filename: '[name]'
+  }
+}
+
+module.exports = [serverConfig, clientConfig]
