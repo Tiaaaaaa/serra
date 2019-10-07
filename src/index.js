@@ -9,13 +9,15 @@ import { ServerStyleSheet } from "styled-components";
 import { App } from "./public/app";
 import { merge } from "./public/redux/merge";
 import devToolsEnhancer from "remote-redux-devtools";
+import { html } from "./html";
 
 const app = express();
 
 app.use("/static", express.static(path.resolve(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  const store = createStore(merge, devToolsEnhancer());
+  const store = createStore(merge);
+  store.dispatch({ type: "CHANGE_TEMPERATURE", payload: 10000 });
   const sheet = new ServerStyleSheet();
   const content = renderToString(
     sheet.collectStyles(
@@ -24,20 +26,9 @@ app.get("/", (req, res) => {
       </Provider>
     )
   );
-  const styles = sheet.getStyleTags();
   const preloadedState = store.getState();
-  const html = `
-  <!doctype html>
-    <html>
-    <head>
-    </head>
-    <body>
-    <div id="root">${content}</div>
-    <script src="/static/home.js"></script>
-  </body>
-  </html>`;
-
-  res.send(html);
+  console.log(preloadedState);
+  res.send(html(content, preloadedState));
 });
 
 app.listen(3000);
