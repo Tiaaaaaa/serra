@@ -37,16 +37,10 @@ const clientConfig = {
   mode: 'development',
   target: 'web',
   entry: {
-    'home.js': path.resolve(__dirname, 'src/public/home.js'),
-    'multipleRoutes.js': path.resolve(__dirname, 'src/public/multipleRoutes.js')
+    'home.js': path.resolve(__dirname, 'src/public/home.js')
   },
   module: {
     rules: [js]
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   },
   output: {
     path: path.resolve(__dirname, 'dist/public'),

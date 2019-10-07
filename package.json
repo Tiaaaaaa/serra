@@ -1,19 +1,12 @@
 {
-  "name": "react-ssr",
+  "name": "serra",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack && concurrently \"webpack --watch\" \"nodemon dist\"",
     "start": "NODE_ENV=production node dist/index.js"
-  },
-  "engines": {
-    "node": "9.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MarvelousWololo/ssr-react"
   },
   "keywords": [],
   "author": "",
